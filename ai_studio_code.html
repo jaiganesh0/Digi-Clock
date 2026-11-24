@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Clock | Virtual Internship Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-container">
+    <section class="clock-card" aria-label="Digital Clock Application">
+      <!-- Top Bar: Title & Status -->
+      <header class="clock-header">
+        <div class="brand">
+          <span class="status-dot" id="status-dot" aria-hidden="true"></span>
+          <h1 class="app-title">Digital Clock</h1>
+        </div>
+        <span class="status-badge" id="status-badge" aria-live="polite">LIVE</span>
+      </header>
+
+      <!-- Date & Day Display -->
+      <div class="date-display" aria-live="polite">
+        <p class="day-text" id="day-display">Loading day...</p>
+        <p class="date-text" id="date-display">Loading date...</p>
+      </div>
+
+      <!-- Time Display -->
+      <div class="time-wrapper" aria-live="off">
+        <div class="time-digits" id="time-display">
+          <span id="hours">00</span><span class="colon" id="colon-1">:</span><span id="minutes">00</span><span class="colon" id="colon-2">:</span><span id="seconds">00</span>
+        </div>
+        <span class="ampm-badge" id="ampm-display">AM</span>
+      </div>
+
+      <!-- Primary Controls -->
+      <div class="controls-row">
+        <div class="format-toggle" role="group" aria-label="Time Format Switch">
+          <button type="button" class="btn btn-toggle active" id="btn-12h" aria-pressed="true">
+            12-Hour
+          </button>
+          <button type="button" class="btn btn-toggle" id="btn-24h" aria-pressed="false">
+            24-Hour
+          </button>
+        </div>
+
+        <button type="button" class="btn btn-primary" id="btn-start-stop">
+          Pause Clock
+        </button>
+      </div>
+
+      <!-- Divider -->
+      <hr class="divider" />
+
+      <!-- Optional Alarm Feature -->
+      <section class="alarm-section" aria-label="Alarm Controls">
+        <div class="alarm-header">
+          <h2 class="section-title">Alarm</h2>
+          <span class="alarm-status" id="alarm-status" aria-live="polite">No alarm set</span>
+        </div>
+
+        <div class="alarm-controls">
+          <label for="alarm-input" class="sr-only">Select alarm time</label>
+          <input type="time" id="alarm-input" class="alarm-input" />
+          <button type="button" class="btn btn-secondary" id="btn-set-alarm">
+            Set Alarm
+          </button>
+          <button type="button" class="btn btn-outline hidden" id="btn-clear-alarm">
+            Clear
+          </button>
+        </div>
+
+        <div class="alarm-alert hidden" id="alarm-alert" role="alert">
+          <span class="alarm-alert-text" id="alarm-alert-text">Alarm ringing!</span>
+          <button type="button" class="btn btn-danger" id="btn-stop-alarm">
+            Stop Alarm
+          </button>
+        </div>
+      </section>
+    </section>
+
+    <footer class="app-footer">
+      <p>Built with HTML, CSS &amp; Vanilla JavaScript</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
